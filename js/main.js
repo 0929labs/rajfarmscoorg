@@ -53,7 +53,7 @@ var GROUPS = {
     cat: 'Spices, Black Pepper',
     img: 'images/products/pepper-black.jpg',
     variants: [
-      { id: 'pepper-black', name: 'Black Pepper', sizes: [{ s:'100g', p:219 }, { s:'250g', p:429 }, { s:'500g', p:849 }] }
+      { id: 'pepper-black', name: 'Black Pepper', sizes: [{ s:'100g', p:140 }, { s:'250g', p:280 }, { s:'500g', p:520 }] }
     ]
   },
   'cardamom': {
@@ -61,7 +61,7 @@ var GROUPS = {
     cat: 'Spices, Cardamom',
     img: 'images/products/cardamom.jpg',
     variants: [
-      { id: 'cardamom', name: 'Cardamom', sizes: [{ s:'100g', p:449 }, { s:'250g', p:849 }, { s:'500g', p:1599 }] }
+      { id: 'cardamom', name: 'Cardamom', sizes: [{ s:'100g', p:415 }, { s:'250g', p:780 }, { s:'500g', p:1520 }] }
     ]
   }
 };
