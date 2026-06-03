@@ -1,0 +1,39 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if ever used for build tools)
+node_modules/
+npm-debug.log*
+yarn-error.log
+.npm
+
+# Build output (if added later)
+dist/
+build/
+.cache/
+
+# Env / secrets (never commit these)
+.env
+.env.local
+.env.production
+
+# Large source files (keep originals locally, optimised versions go in repo)
+images/raw/
+images/originals/
+*.psd
+*.ai
+*.sketch
+*.fig

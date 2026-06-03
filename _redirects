@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects
+# Format: /old-path  /new-path  status-code
+
+# Redirect bare domain trailing slash variants
+/index  /  301
+/home   /  301
+
+# 404 fallback — serve index if no match (SPA-style, not needed for static but safe to have)
+# /*  /index.html  200
