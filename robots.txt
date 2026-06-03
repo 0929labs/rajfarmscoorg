@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rajfarmscoorg.com/sitemap.xml
+Sitemap: https://rajfarmscoorg.in/sitemap.xml
