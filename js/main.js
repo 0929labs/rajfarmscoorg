@@ -48,14 +48,30 @@ var GROUPS = {
       { id: 'honey-wild', name: 'Wild Forest Honey', sizes: [{ s:'400g jar', p:500 }, { s:'1kg jar', p:1250 }] }
     ]
   },
-  'pepper': {
-    title: 'Black Pepper',
-    cat: 'Spices, Black Pepper',
-    img: 'images/products/pepper-black.jpg',
-    variants: [
-      { id: 'pepper-black', name: 'Black Pepper', sizes: [{ s:'100g', p:140 }, { s:'250g', p:280 }, { s:'500g', p:520 }] }
-    ]
-  },
+
+'pepper': {
+  title: 'Black Pepper',
+  cat: 'Spices, Black Pepper',
+  img: 'images/products/pepper-black.jpg',
+  variants: [
+    {
+      id: 'pepper-whole',
+      name: 'Whole Seeds',
+      sizes: [
+        { s:'100g', p:200 },
+        { s:'250g', p:500 }
+      ]
+    },
+    {
+      id: 'pepper-powder',
+      name: 'Pepper Powder',
+      sizes: [
+        { s:'100g', p:240 },
+        { s:'250g', p:550 }
+      ]
+    }
+  ]
+},
   'cardamom': {
     title: 'Cardamom',
     cat: 'Spices, Cardamom',
