@@ -386,7 +386,7 @@ document.getElementById('co-submit').addEventListener('click', function(){
     +'\nPhone: '+phone
     +'\nAddress: '+addr+', '+city+' '+pin
     +(notes?'\nNotes: '+notes:'');
-  window.open('https://wa.me/919448895879?text='+encodeURIComponent(msg),'_blank');
+  window.open('https://wa.me/918277112503?text='+encodeURIComponent(msg),'_blank');
   closeCheckout(); cart=[]; renderCart();
 });
 
@@ -399,7 +399,7 @@ document.getElementById('form-send').addEventListener('click', function(){
   var text='Hello, I am '+name+' and I would like to enquire about '+product+' from Raj Farms Coorg.';
   if(phone) text+=' My phone number is '+phone+'.';
   if(msg2) text+=' '+msg2;
-  window.open('https://wa.me/919448895879?text='+encodeURIComponent(text),'_blank');
+  window.open('https://wa.me/918277112503?text='+encodeURIComponent(text),'_blank');
 });
 
 /* ── Scroll reveal ── */
