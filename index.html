@@ -451,7 +451,7 @@
     <div class="section-tag center">From Our Customers</div>
     <h2 class="section-title">What People<br><em>Are Saying</em></h2>
   </div>
-  <div class="testimonial-grid">
+  <div class="testimonial-grid" id="testimonial-grid">
     <div class="testimonial-card rev">
       <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="testimonial-text">"If you are a coffee lover looking for authentic filter coffee and roasted beans, Raj Farms Coorg is the best place!"</p>
@@ -471,6 +471,69 @@
       <div class="testimonial-loc">London, UK</div>
     </div>
   </div>
+
+
+
+
+
+
+
+<div class="customer-review-form rev">
+  <div class="review-form-heading">
+    <div class="section-tag center">Your Experience Matters</div>
+    <h3>Share Your <em>Experience</em></h3>
+    <p>Enjoyed something from our estate? Tell us about it.</p>
+  </div>
+
+  <form id="customer-review-form">
+    <div class="form-group">
+      <label class="form-label" for="review-name">Your Name</label>
+      <input class="form-input" type="text" id="review-name"
+             maxlength="40" placeholder="Your name" required>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="review-city">City</label>
+      <input class="form-input" type="text" id="review-city"
+             maxlength="40" placeholder="Your city">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Your Rating</label>
+      <select class="form-select" id="review-rating" required>
+        <option value="5">★★★★★ - Excellent</option>
+        <option value="4">★★★★ - Very Good</option>
+        <option value="3">★★★ - Good</option>
+        <option value="2">★★ - Fair</option>
+        <option value="1">★ - Poor</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="review-message">Your Review</label>
+      <textarea class="form-textarea" id="review-message"
+                maxlength="400" minlength="10"
+                placeholder="Share your experience..." required></textarea>
+    </div>
+
+    <!-- Spam protection. Leave this field empty. -->
+    <div class="review-honeypot" aria-hidden="true">
+      <input type="text" id="review-website" tabindex="-1"
+             autocomplete="off">
+    </div>
+
+    <button type="submit" class="form-submit" id="review-submit">
+      Submit Review
+    </button>
+
+    <p id="review-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+
+
+
+	
   <div class="instagram-strip rev">
     <p class="instagram-label">Follow our estate on Instagram</p>
     <a href="https://instagram.com/rajfarmscoorg" target="_blank" rel="noopener" class="instagram-link">
