@@ -981,6 +981,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
   .product-cta-tile{min-height:200px;}
 }
+
 @media(max-width:680px){
   .nav-right .nav-link,.nav-right .nav-cta{display:none;}
   .nav-burger{display:flex;}
@@ -991,7 +992,51 @@ footer{background:var(--bg3);border-top:1px solid var(--border);}
   .footer-top{grid-template-columns:1fr;}
   .footer-bottom{flex-direction:column;text-align:center;}
   .heritage-sep{display:none;}
+
+  /* Customer review form: mobile layout */
+  .customer-review-form{
+    width:100%;
+    max-width:100%;
+    margin:2rem 0;
+    padding:1.5rem 1rem;
+    box-sizing:border-box;
+  }
+
+  .review-form-heading{
+    margin-bottom:1.5rem;
+  }
+
+  #customer-review-form{
+    width:100%;
+    gap:1.1rem;
+  }
+
+  #customer-review-form .form-group{
+    width:100%;
+    min-width:0;
+    gap:0.5rem;
+  }
+
+  #customer-review-form .form-input,
+  #customer-review-form .form-select,
+  #customer-review-form .form-textarea{
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+
+  #customer-review-form .form-textarea{
+    min-height:125px;
+  }
+
+  #customer-review-form .form-submit{
+    width:100%;
+    align-self:stretch;
+    justify-content:center;
+    margin-top:0.3rem;
+  }
 }
+
 @media(max-width:420px){
   .product-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem;}
   .product-cta-tile{min-height:160px;}
