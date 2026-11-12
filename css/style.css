@@ -1040,6 +1040,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);}
 @media(max-width:420px){
   .product-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem;}
   .product-cta-tile{min-height:160px;}
+}
 
 
 /* ============================================================
@@ -1051,7 +1052,6 @@ footer{background:var(--bg3);border-top:1px solid var(--border);}
   margin: 2rem auto 3rem;
   padding: 2rem;
   background: var(--card);
-  border: 1px solid var(--border2);
 }
 
 .review-form-heading {
@@ -1115,13 +1115,6 @@ footer{background:var(--bg3);border-top:1px solid var(--border);}
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-
-@media(max-width:680px) {
-  .customer-review-form {
-    margin: 1.5rem 1rem 2rem;
-    padding: 1.3rem;
-  }
 }
 
 
