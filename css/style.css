@@ -630,7 +630,7 @@ p{line-height:1.85;font-size:0.875rem;font-weight:300;color:var(--text3);}
 .contact-value{font-size:0.75rem;color:var(--text2);font-weight:300;line-height:1.5;}
 .contact-form{display:flex;flex-direction:column;gap:1.1rem;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-group{display:flex;flex-direction:column;gap:0.4rem;}
+.form-group{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:0.8rem;}
 .form-label{
   font-family:"Lato",sans-serif;
   font-size:0.44rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);
@@ -638,7 +638,7 @@ p{line-height:1.85;font-size:0.875rem;font-weight:300;color:var(--text3);}
 .form-input,.form-select,.form-textarea{
   background:rgba(255,255,255,0.03);border:1px solid var(--border);
   border-bottom-color:var(--border2);
-  color:var(--text);padding:0.78rem 0.9rem;
+  color:var(--text);padding:0.95rem 1rem;
   font-family:"Lato",sans-serif;font-size:0.75rem;font-weight:300;
   outline:none;transition:border-color var(--transition),background var(--transition);
   appearance:none;-webkit-appearance:none;
@@ -653,12 +653,12 @@ p{line-height:1.85;font-size:0.875rem;font-weight:300;color:var(--text3);}
   background-color:rgba(255,255,255,0.03);padding-right:2rem;
 }
 .form-select option{background:#131108;color:var(--text);}
-.form-textarea{resize:vertical;min-height:90px;}
+.form-textarea{resize:vertical;min-height:120px;}
 .form-submit{
   font-family:"Lato",sans-serif;
   background:var(--gold);color:var(--obsidian);border:1px solid var(--gold);
   font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
-  padding:0.9rem 2rem;align-self:flex-start;
+  padding:0.9rem 2rem;align-self:stretch;justify-content:center;
   display:flex;align-items:center;gap:0.6rem;
   transition:background var(--transition),box-shadow var(--transition);
 }
