@@ -401,6 +401,181 @@ document.getElementById('form-send').addEventListener('click', function(){
   window.open('https://wa.me/918277112503?text='+encodeURIComponent(text),'_blank');
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+   /* ══════════════════════════════════════════════
+   CUSTOMER REVIEWS . GOOGLE SHEETS
+   ══════════════════════════════════════════════ */
+
+var REVIEWS_API = 'https://script.google.com/macros/s/AKfycbzS88d-1F_ALhpKYhIFwTs6nErU4PWfkcW75l3rlqhvWfMyUVw_AwLSHazt2Ro1frJmcA/exec';
+
+var reviewForm = document.getElementById('customer-review-form');
+var reviewGrid = document.getElementById('testimonial-grid');
+
+function shuffleReviews(list) {
+  var shuffled = list.slice();
+
+  for (var i = shuffled.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = temp;
+  }
+
+  return shuffled;
+}
+
+function renderReviews(reviews) {
+  if (!reviewGrid) return;
+
+  var defaults = Array.from(
+    reviewGrid.querySelectorAll('.testimonial-card')
+  );
+
+  var selected = shuffleReviews(reviews).slice(0, 3);
+
+  var cards = selected.map(function(review) {
+    return {
+      name: review.name,
+      city: review.city,
+      rating: Math.max(1, Math.min(5, Number(review.rating) || 5)),
+      review: review.review
+    };
+  });
+
+  // Fill empty positions with the existing website reviews.
+  defaults.forEach(function(card) {
+    if (cards.length >= 3) return;
+
+    cards.push({
+      name: card.querySelector('.testimonial-name').textContent,
+      city: card.querySelector('.testimonial-loc').textContent,
+      rating: 5,
+      review: card.querySelector('.testimonial-text').textContent
+        .replace(/^["']|["']$/g, '')
+    });
+  });
+
+  reviewGrid.replaceChildren();
+
+  cards.slice(0, 3).forEach(function(review) {
+    var card = document.createElement('div');
+    card.className = 'testimonial-card rev on';
+
+    var stars = document.createElement('div');
+    stars.className = 'testimonial-stars';
+    stars.textContent = '★'.repeat(review.rating);
+
+    var quote = document.createElement('p');
+    quote.className = 'testimonial-text';
+    quote.textContent = '"' + review.review + '"';
+
+    var name = document.createElement('div');
+    name.className = 'testimonial-name';
+    name.textContent = review.name;
+
+    var city = document.createElement('div');
+    city.className = 'testimonial-loc';
+    city.textContent = review.city || '';
+
+    card.append(stars, quote, name, city);
+    reviewGrid.appendChild(card);
+  });
+}
+
+// Load reviews from Google Sheets.
+function loadCustomerReviews() {
+  if (!reviewGrid) return;
+
+  fetch(REVIEWS_API)
+    .then(function(response) {
+      if (!response.ok) throw new Error('Could not load reviews');
+      return response.json();
+    })
+    .then(function(reviews) {
+      if (!Array.isArray(reviews)) {
+        throw new Error('Invalid review data');
+      }
+
+      renderReviews(reviews);
+    })
+    .catch(function(error) {
+      console.error('Review loading error:', error);
+      // Existing three reviews remain visible if loading fails.
+    });
+}
+
+loadCustomerReviews();
+
+// Submit customer reviews to Google Sheets.
+if (reviewForm) {
+  reviewForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById('review-name').value.trim();
+    var city = document.getElementById('review-city').value.trim();
+    var rating = document.getElementById('review-rating').value;
+    var review = document.getElementById('review-message').value.trim();
+    var website = document.getElementById('review-website').value;
+
+    var status = document.getElementById('review-status');
+    var button = document.getElementById('review-submit');
+
+    if (website) return;
+
+    if (!name || review.length < 10) {
+      status.textContent = 'Please enter your name and a review of at least 10 characters.';
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'Submitting...';
+    status.textContent = '';
+
+    var data = new URLSearchParams({
+      name: name,
+      city: city,
+      rating: rating,
+      review: review,
+      website: ''
+    });
+
+    fetch(REVIEWS_API, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: data.toString()
+    })
+    .then(function() {
+      status.textContent = 'Thank you! Your review has been submitted.';
+      reviewForm.reset();
+      button.textContent = 'Review Submitted';
+    })
+    .catch(function(error) {
+      console.error('Review submission error:', error);
+      status.textContent = 'Unable to submit. Please try again.';
+      button.disabled = false;
+      button.textContent = 'Submit Review';
+    });
+  });
+}
+
+
+
+
+   
 /* ── Scroll reveal ── */
 var revEls=document.querySelectorAll('.rev,.rev-l,.rev-r');
 var io=new IntersectionObserver(function(entries){
