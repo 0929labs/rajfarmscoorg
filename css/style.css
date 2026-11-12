@@ -1117,9 +1117,3 @@ footer{background:var(--bg3);border-top:1px solid var(--border);}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem;}
   .product-cta-tile{min-height:160px;}
 }
-
-
-
-
-
-}
