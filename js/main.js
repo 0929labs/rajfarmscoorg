@@ -54,7 +54,6 @@ var GROUPS = {
   img: 'images/products/pepper-black.jpg',
   variants: [
     { id: 'pepper-whole', name: 'Whole Seeds', sizes: [{ s:'100g', p:225 }, { s:'250g', p:525 }, { s:'500g', p:999}] },
-    { id: 'pepper-powder', name: 'Pepper Powder', sizes: [{ s:'100g', p:240 }, { s:'250g', p:550 }] }
   ]
 },
   'cardamom': {
